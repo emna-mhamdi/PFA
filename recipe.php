@@ -84,11 +84,9 @@
             <div class="container-fluid">
                 <div class="recipe-title">
                     <span>~ 5 ingredients / 20 minutes / easy / japanese/ recipe</span>
-                    <h2>Chipotle Sweet Potato Noodle Salad <br /> with Roasted Corn</h2>
-                    <ul class="tags">
-                        <li>Desert</li>
-                        <li>Asian</li>
-                        <li>Spicy</li>
+                    <h2 id="recipe-title"></h2>
+                    <ul id="categories">
+
                     </ul>
                 </div>
                 <img src="img/recipe-single.jpg" alt="">
@@ -359,6 +357,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+
+
+
+  <h1 id="recipe-title"></h1>
+  <img id="recipe-image" alt="Recipe Image" style="max-width: 300px;"><br>
+  <p id="recipe-description"></p>
+  <p><strong>Time:</strong> <span id="recipe-time"></span></p>
+  <p><strong>Servings:</strong> <span id="recipe-servings"></span></p>
+  <p><strong>Difficulty:</strong> <span id="recipe-difficulty"></span></p>
+  <p><strong>Date Added:</strong> <span id="recipe-date"></span></p>
+
+  <h3>Ingredients:</h3>
+  <ul id="recipe-ingredients"></ul>
+
+  <script src="js/getrecipe.js"></script>
+
+
 </body>
 
 </html>
