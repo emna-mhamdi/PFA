@@ -65,16 +65,15 @@
   <div class="hero-search set-bg" data-setbg="img/search-bg.jpg">
     <div class="container">
       <div class="filter-table">
-        <form action="#" class="filter-search">
-          <input type="text" placeholder="Search recipe">
-          <select id="category">
-            <option value="">Category</option>
-          </select>
+        <form action="recipes.php" method="GET" class="filter-search">
+          <input type="text" name="search_query" placeholder="Search recipe"
+            value="<?php echo isset($_GET['search_query']) ? htmlspecialchars($_GET['search_query']) : ''; ?>">
           <button type="submit">Search</button>
         </form>
       </div>
     </div>
   </div>
+
   <!-- Hero Search Section End -->
 
   <section class="recipe-section spad">

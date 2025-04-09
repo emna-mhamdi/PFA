@@ -1151,7 +1151,7 @@ ol {
 }
 
 .hero-search .filter-table .filter-search input {
-  width: calc(28% - 10px);
+  width: calc(80% - 10px);
   margin-right: 10px;
   font-size: 16px;
   height: 54px;
@@ -2324,7 +2324,7 @@ ol {
     margin-bottom: 15px;
   }
   .hero-search .filter-table .filter-search input {
-    width: calc(27% - 10px);
+    width: calc(80% - 10px);
   }
   .hero-search .filter-table .filter-search .nice-select {
     width: calc(27% - 10px);
@@ -2377,7 +2377,7 @@ ol {
     right: -12px;
   }
   .hero-search .filter-table .filter-search input {
-    width: calc(26% - 10px);
+    width: calc(80% - 10px);
   }
   .hero-search .filter-table .filter-search .nice-select {
     width: calc(26% - 10px);
