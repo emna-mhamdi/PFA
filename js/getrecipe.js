@@ -60,7 +60,7 @@ async function fetchRecipe() {
     });
     // Set summary: "~ 5 ingredients / 20 minutes / Easy"
     const summarySpan = document.getElementById("recipe-summary");
-    summarySpan.textContent = `~ ${data.ingredient_count} ingredients / ${data.total_time} minutes / ${data.difficulty_level}`;
+    summarySpan.textContent = `${data.ingredient_count} ingredients / ${data.total_time} minutes / ${data.difficulty_level}`;
     // Show nutrition info as <ul><li>protein: X</li>...</ul>
     const nutrition = data.nutrition;
     const nutritionList = document.getElementById("recipe-nutrition");
@@ -96,6 +96,31 @@ async function fetchRecipe() {
       li.append(" " + step.instruction_text);
       instructionsList.appendChild(li);
     });
+
+    const notesContainer = document.getElementById("recipe-notes");
+    const notesSection = document.getElementById("notes-section");
+
+    notesContainer.innerHTML = "";
+
+    if (data.notes && data.notes.length > 0) {
+      notesSection.style.display = "block";
+      data.notes.forEach((noteText) => {
+        const noteDiv = document.createElement("div");
+        noteDiv.classList.add("notes-item");
+
+        const iconSpan = document.createElement("span");
+        iconSpan.textContent = "i";
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = noteText;
+
+        noteDiv.appendChild(iconSpan);
+        noteDiv.appendChild(paragraph);
+        notesContainer.appendChild(noteDiv);
+      });
+    } else {
+      notesSection.style.display = "none";
+    }
   } catch (err) {
     console.error("Fetch error:", err);
   }

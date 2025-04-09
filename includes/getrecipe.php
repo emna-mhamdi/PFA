@@ -89,6 +89,18 @@ try {
     // Add to recipe
     $recipe['instructions'] = $instructions;
 
+    // Get notes
+    $stmt = $pdo->prepare("
+    SELECT note_text
+    FROM notes
+    WHERE recipe_id = :recipe_id
+    ");
+    $stmt->bindParam(':recipe_id', $recipeId);
+    $stmt->execute();
+    $notes = $stmt->fetchAll(PDO::FETCH_COLUMN); // just text
+
+    $recipe['notes'] = $notes;
+
     echo json_encode($recipe);
 
 } catch (PDOException $e) {

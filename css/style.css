@@ -1139,12 +1139,15 @@ ol {
 .hero-search .filter-table {
   height: 252px;
   width: 100%;
-  display: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-search .filter-table .filter-search {
   display: table-cell;
   vertical-align: middle;
+  width: 100%;
 }
 
 .hero-search .filter-table .filter-search input {
@@ -1231,6 +1234,8 @@ ol {
 
 .recipe-item a img {
   min-width: 100%;
+  height: 300px; /* Set the same fixed height */
+  object-fit: cover;
 }
 
 .recipe-item .ri-text .cat-name {
@@ -1484,16 +1489,22 @@ ol {
 
 .ingredients-item {
   border: 2px solid #f5f6fa;
-  margin-bottom: 20px;
 }
 
 .ingredients-item .intro-item {
+  display: flex;
   background: #fc0254;
-  text-align: center;
+  justify-content: center;
   position: relative;
-  padding-top: 110px;
-  padding-left: 20px;
-  padding-right: 20px;
+  align-items: center;
+  height: 100px;
+}
+
+.ingredients-item .intro-item p {
+  margin: 0; /* Remove default margin */
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .ingredients-item .intro-item img {
@@ -1532,14 +1543,6 @@ ol {
   font-size: 15px;
   opacity: 0.7;
   margin-bottom: 35px;
-}
-
-.ingredients-item .intro-item .recipe-time {
-  background: #000;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-left: -20px;
-  margin-right: -20px;
 }
 
 .ingredients-item .intro-item .recipe-time ul li {
@@ -1660,6 +1663,7 @@ ol {
   padding: 0 40px;
   padding-top: 50px;
   padding-bottom: 20px;
+  width: 100%;
 }
 
 .nutrition-fact .nutri-title {
@@ -1670,20 +1674,25 @@ ol {
   border-bottom: 2px solid #fff;
   padding-left: 40px;
   padding-right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nutrition-fact .nutri-title h6 {
-  float: left;
   color: #fff;
 }
 
 .nutrition-fact .nutri-title span {
-  float: right;
   color: #fff;
 }
 
 .nutrition-fact ul {
   margin-top: 23px;
+  width: 100%;
+  display: flex; /* Enable flexbox layout */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nutrition-fact ul li {
@@ -1691,13 +1700,12 @@ ol {
   display: inline-block;
   font-size: 16px;
   color: #fff;
-  margin-right: 15px;
   margin-bottom: 10px;
 }
 
-.nutrition-fact ul li:last-child {
+/* .nutrition-fact ul li:last-child {
   margin-right: 0;
-}
+} */
 
 .recipe-right .recipe-desc {
   margin-bottom: 50px;

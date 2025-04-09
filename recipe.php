@@ -84,7 +84,7 @@
         <div class="recipe-top">
             <div class="container-fluid">
                 <div class="recipe-title">
-                <span id="recipe-summary"></span>
+                    <span id="recipe-summary"></span>
                     <h2 id="recipe_title"></h2>
                     <ul id="categories">
                     </ul>
@@ -97,16 +97,12 @@
                 <div class="col-lg-5">
                     <div class="ingredients-item">
                         <div class="intro-item">
-                            <div class="recipe-time">
-                                <p id="recipe-time"></p>
-                            </div>
+                            <p id="recipe-time"></p>
                         </div>
                         <div class="ingredient-list">                           
                             <div class="list-item">
                                 <h5>Ingredients</h5>
-                                <div class="salad-list">
-                                <ul id="recipe-ingredients"></ul>
-                                </div>
+                                <ul id="recipe-ingredients"></ul>                      
                             </div>
                         </div>
                     </div>
@@ -129,22 +125,9 @@
                             <ul id="recipe-instructions"></ul>
                         </div>
                         <div class="notes">
-                            <h3>Notes</h3>
-                            <div class="notes-item">
-                                <span>i</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in
-                                    sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin neque
-                                    sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non, ultricies
-                                    volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at elit
-                                    condimentum viverra.</p>
-                            </div>
-                            <div class="notes-item">
-                                <span>i</span>
-                                <p>Donec in sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin
-                                    neque sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non,
-                                    ultricies volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at
-                                    elit condimentum viverra.</p>
+                            <div id="notes-section" style="display:none;">
+                                <h3>Notes</h3>
+                                <div id="recipe-notes"></div> <!-- Will be filled with .notes-item divs -->
                             </div>
                         </div>
                     </div>
