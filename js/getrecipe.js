@@ -19,12 +19,12 @@ async function fetchRecipe() {
 
     if (data.error) {
       console.error("Error:", data.error);
-      document.getElementById("recipe-title").textContent = "Recipe not found";
+      document.getElementById("recipe_title").textContent = "Recipe not found";
       return;
     }
 
     // Set recipe fields
-    document.getElementById("recipe-title").textContent = data.title;
+    document.getElementById("recipe_title").textContent = data.title;
     document.getElementById("recipe-description").textContent =
       data.description;
     document.getElementById(
@@ -33,11 +33,6 @@ async function fetchRecipe() {
     document.getElementById(
       "recipe-servings"
     ).textContent = `${data.servings} servings`;
-    document.getElementById("recipe-difficulty").textContent =
-      data.difficulty_level;
-    document.getElementById("recipe-date").textContent = new Date(
-      data.date_added
-    ).toLocaleDateString();
 
     if (data.image) {
       document.getElementById("recipe-image").src =
@@ -62,6 +57,44 @@ async function fetchRecipe() {
       const li = document.createElement("li");
       li.textContent = cat;
       categoriesList.appendChild(li);
+    });
+    // Set summary: "~ 5 ingredients / 20 minutes / Easy"
+    const summarySpan = document.getElementById("recipe-summary");
+    summarySpan.textContent = `~ ${data.ingredient_count} ingredients / ${data.total_time} minutes / ${data.difficulty_level}`;
+    // Show nutrition info as <ul><li>protein: X</li>...</ul>
+    const nutrition = data.nutrition;
+    const nutritionList = document.getElementById("recipe-nutrition");
+    nutritionList.innerHTML = "";
+
+    if (nutrition) {
+      const nutrients = [
+        { label: "protein", value: nutrition.protein },
+        { label: "carbs", value: nutrition.carbs },
+        { label: "fats", value: nutrition.fats },
+      ];
+
+      nutrients.forEach((nutrient) => {
+        const li = document.createElement("li");
+        li.textContent = `${nutrient.label} : ${nutrient.value}g`;
+        nutritionList.appendChild(li);
+      });
+    } else {
+      const li = document.createElement("li");
+      li.textContent = "Nutrition data not available.";
+      nutritionList.appendChild(li);
+    }
+    // Display instructions
+    const instructionsList = document.getElementById("recipe-instructions");
+    instructionsList.innerHTML = "";
+    data.instructions.forEach((step) => {
+      const li = document.createElement("li");
+
+      const span = document.createElement("span");
+      span.textContent = String(step.step_number).padStart(2, "0") + ".";
+
+      li.appendChild(span);
+      li.append(" " + step.instruction_text);
+      instructionsList.appendChild(li);
     });
   } catch (err) {
     console.error("Fetch error:", err);

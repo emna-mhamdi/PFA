@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css"/>
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>" type="text/css"/>
+
 </head>
 
 <body>
@@ -83,13 +84,12 @@
         <div class="recipe-top">
             <div class="container-fluid">
                 <div class="recipe-title">
-                    <span>~ 5 ingredients / 20 minutes / easy / japanese/ recipe</span>
-                    <h2 id="recipe-title"></h2>
+                <span id="recipe-summary"></span>
+                    <h2 id="recipe_title"></h2>
                     <ul id="categories">
-
                     </ul>
                 </div>
-                <img src="img/recipe-single.jpg" alt="">
+                <img id="recipe-image" alt="Recipe Image" >
             </div>
         </div>
         <div class="container">
@@ -97,52 +97,15 @@
                 <div class="col-lg-5">
                     <div class="ingredients-item">
                         <div class="intro-item">
-                            <img src="img/intro-img.jpg" alt="">
-                            <h2>Chipotle Sweet Potato Noodle with Roasted Corn</h2>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="reviews">4.9 from 25 reviews</div>
                             <div class="recipe-time">
-                                <ul>
-                                    <li>Prep time: <span>10 min</span></li>
-                                    <li>Cook time: <span>10 min</span></li>
-                                    <li>Yield: <span>5</span></li>
-                                </ul>
+                                <p id="recipe-time"></p>
                             </div>
                         </div>
-                        <div class="ingredient-list">
-                            <div class="recipe-btn">
-                                <a href="#">Print Recipe</a>
-                                <a href="#" class="black-btn">Pin Recipe</a>
-                            </div>
+                        <div class="ingredient-list">                           
                             <div class="list-item">
                                 <h5>Ingredients</h5>
                                 <div class="salad-list">
-                                    <h6>For the salad</h6>
-                                    <ul>
-                                        <li>1 brick of frozen udon</li>
-                                        <li>1/2 cup kimchi, plus a bit of kimchi juice</li>
-                                        <li>1 tablespoon of butter</li>
-                                        <li>1 sac of mentaiko</li>
-                                        <li>sliced green onions and nori, to finish</li>
-                                    </ul>
-                                </div>
-                                <div class="dressing-list">
-                                    <h6>For the dressing</h6>
-                                    <ul>
-                                        <li>1 brick of frozen udon</li>
-                                        <li>1/2 cup kimchi, plus a bit of kimchi juice</li>
-                                        <li>1 tablespoon of butter</li>
-                                        <li>1 sac of mentaiko</li>
-                                        <li>sliced green onions and nori, to finish</li>
-                                        <li>1 tablespoon of butter</li>
-                                        <li>1 sac of mentaiko</li>
-                                    </ul>
+                                <ul id="recipe-ingredients"></ul>
                                 </div>
                             </div>
                         </div>
@@ -150,80 +113,20 @@
                     <div class="nutrition-fact">
                         <div class="nutri-title">
                             <h6>Nutrition Facts</h6>
-                            <span>Serves 4</span>
+                            <span id="recipe-servings"></span>
                         </div>
-                        <ul>
-                            <li>Total Fat : 20.4g</li>
-                            <li>Cholesterol : 2%</li>
-                            <li>Chalories: 345</li>
-                        </ul>
+                        <ul id="recipe-nutrition"></ul>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="recipe-right">
                         <div class="recipe-desc">
                             <h3>Description</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in sodales dui, a
-                                blandit nunc. Pellentesque id eros venenatis, sollicitudin neque sodales, vehicula nibh.
-                                Nam massa odio, porttitor vitae efficitur non, ultricies volutpat tellus. Cras egestas
-                                in lacus a finibus. Suspendisse sed urna at elit condimentum viverra. Suspendisse non
-                                lobortis nisi. Maecenas accumsan quam quis porta laoreet. Aliquam felis odio, aliquet
-                                fermentum semper at, porttitor ac mi. Duis vel condimentum risus. Phasellus eu dolor vel
-                                neque commodo accumsan eget et enim. Pellentesque non elit sed risus tincidunt aliquam
-                                eu eget metus.</p>
-                            <p>Donec sit amet enim tortor. Sed egestas nulla nibh, vitae porta velit sagittis eget.
-                                Donec vitae tellus semper, cursus sem id, iaculis purus. Aenean ligula risus, maximus
-                                tristique eros vel, auctor ornare tortor. Aliquam vel augue sapien. Duis non auctor
-                                ante, ac vestibulum tortor. Etiam quis dolor ultricies, dignissim ante a, ornare ipsum.
-                                Phasellus suscipit rhoncus nulla, quis bibendum tortor elementum ac. Nullam viverra
-                                tellus diam, nec accumsan orci aliquam sed. Sed placerat sagittis lacus, non rutrum diam
-                                volutpat id. </p>
+                            <p id="recipe-description"></p>
                         </div>
                         <div class="instruction-list">
                             <h3>Instructions</h3>
-                            <ul>
-                                <li>
-                                    <span>01.</span>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in
-                                    sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin neque
-                                    sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non, ultricies
-                                    volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at elit
-                                    condimentum viverra. Suspendisse non lobortis nisi. Maecenas accumsan quam quis
-                                    porta laoreet. Aliquam felis odio, aliquet fermentum semper at, porttitor ac mi.
-                                </li>
-                                <li>
-                                    <span>02.</span>
-                                    Donec sit amet enim tortor. Sed egestas nulla nibh, vitae porta velit sagittis eget.
-                                    Donec vitae tellus semper, cursus sem id, iaculis purus. Aenean ligula risus,
-                                    maximus tristique eros vel, auctor ornare tortor. Aliquam vel augue sapien. Duis non
-                                    auctor ante, ac vestibulum tortor. Etiam quis dolor ultricies, dignissim ante a,
-                                    ornare ipsum. Phasellus suscipit rhoncus nulla, quis bibendum tortor elementum ac.
-                                    Nullam viverra tellus diam, nec accumsan orci aliquam sed. Sed placerat sagittis
-                                    lacus, non rutrum diam volutpat id.
-                                </li>
-                                <li>
-                                    <span>03.</span>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Donec in
-                                    sodales dui, a blandit nunc. Pellentesque id eros venenatis, sollicitudin neque
-                                    sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non, ultricies
-                                    volutpat tellus. Cras egestas in lacus a finibus. Suspendisse sed urna at elit
-                                    condimentum viverra. Suspendisse non lobortis nisi. Maecenas accumsan quam quis
-                                    porta laoreet. Aliquam felis odio, aliquet fermentum semper at, porttitor ac mi.
-                                </li>
-                                <li>
-                                    <span>04.</span>
-                                    Donec sit amet enim tortor. Sed egestas nulla nibh, vitae porta velit sagittis eget.
-                                    Donec vitae tellus semper, cursus sem id, iaculis purus. Aenean ligula risus,
-                                    maximus tristique eros vel, auctor ornare tortor. Aliquam vel augue sapien. Duis non
-                                    auctor ante, ac vestibulum tortor. Etiam quis dolor ultricies, dignissim ante a,
-                                    ornare ipsum. Phasellus suscipit rhoncus nulla, quis bibendum tortor elementum ac.
-                                    Nullam viverra tellus diam, nec accumsan orci aliquam sed. Sed placerat sagittis
-                                    lacus, non rutrum diam volutpat id.
-                                </li>
-                            </ul>
+                            <ul id="recipe-instructions"></ul>
                         </div>
                         <div class="notes">
                             <h3>Notes</h3>
@@ -360,18 +263,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 
-  <h1 id="recipe-title"></h1>
-  <img id="recipe-image" alt="Recipe Image" style="max-width: 300px;"><br>
-  <p id="recipe-description"></p>
-  <p><strong>Time:</strong> <span id="recipe-time"></span></p>
-  <p><strong>Servings:</strong> <span id="recipe-servings"></span></p>
-  <p><strong>Difficulty:</strong> <span id="recipe-difficulty"></span></p>
-  <p><strong>Date Added:</strong> <span id="recipe-date"></span></p>
 
-  <h3>Ingredients:</h3>
-  <ul id="recipe-ingredients"></ul>
-
-  <script src="js/getrecipe.js"></script>
+  
+  <script src="js/getrecipe.js?<?php echo time(); ?>"></script>
 
 
 </body>

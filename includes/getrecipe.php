@@ -30,7 +30,7 @@ try {
 
     $recipeId = $recipe['recipe_id'];
 
-    // Get ingredients with names
+    // Get ingredients
     $stmt = $pdo->prepare("
         SELECT i.name AS ingredient_name, ri.quantity, ri.unit_of_measure, ri.preparation_notes
         FROM recipe_ingredients ri
@@ -41,6 +41,9 @@ try {
     $stmt->execute();
     $ingredients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // Count ingredients
+    $ingredientCount = count($ingredients);
+
     // Get category names
     $stmt = $pdo->prepare("
         SELECT c.name AS category_name
@@ -50,11 +53,41 @@ try {
     ");
     $stmt->bindParam(':recipe_id', $recipeId);
     $stmt->execute();
-    $categories = $stmt->fetchAll(PDO::FETCH_COLUMN); // returns array of names
+    $categories = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+    // Add extras
+    $recipe['ingredients'] = $ingredients;
+    $recipe['ingredient_count'] = $ingredientCount;
+    $recipe['categories'] = $categories;
+
+
+
+    // Get nutrition info
+    $stmt = $pdo->prepare("
+    SELECT protein, carbs, fats
+    FROM recipe_nutrition
+    WHERE recipe_id = :recipe_id
+    ");
+    $stmt->bindParam(':recipe_id', $recipeId);
+    $stmt->execute();
+    $nutrition = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Add to recipe
-    $recipe['ingredients'] = $ingredients;
-    $recipe['categories'] = $categories;
+    $recipe['nutrition'] = $nutrition;
+
+    // Get instructions
+    $stmt = $pdo->prepare("
+    SELECT step_number, instruction_text
+    FROM instructions
+    WHERE recipe_id = :recipe_id
+    ORDER BY step_number ASC
+    ");
+    $stmt->bindParam(':recipe_id', $recipeId);
+    $stmt->execute();
+    $instructions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Add to recipe
+    $recipe['instructions'] = $instructions;
 
     echo json_encode($recipe);
 
