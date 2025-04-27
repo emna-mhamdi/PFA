@@ -31,24 +31,16 @@
     <header class="header-section-other">
         <div class="container-fluid">
             <div class="logo">
-                <a href="./index.html"><img src="img/little-logo.png" alt=""></a>
+                <a href="./index.php"><img src="img/little-logo.png" alt=""></a>
             </div>
             <div class="nav-menu">
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="about-me.html">About Me</a></li>
-                                <li><a href="categories.html">Categories</a></li>
-                                <li><a href="recipe.html">Recipe</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="recipe.html">Recipes</a></li>
-                        <li><a href="categories.html">Best Of</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li ><a href="index.php">Home</a></li>
+                        <li class="active"><a href="recipes.php">Recipes</a></li>
+                        <li><a href="about-me.html">About me</a></li>
+
+                 
                     </ul>
                 </nav>
                 <div class="nav-right search-switch">
@@ -62,21 +54,17 @@
 
     <!-- Hero Search Section Begin -->
     <div class="hero-search set-bg" data-setbg="img/search-bg.jpg">
-        <div class="container">
-            <div class="filter-table">
-                <form action="#" class="filter-search">
-                    <input type="text" placeholder="Search recipe">
-                    <select id="category">
-                        <option value="">Category</option>
-                    </select>
-                    <select id="tag">
-                        <option value="">Tags</option>
-                    </select>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-        </div>
+    <div class="container">
+      <div class="filter-table">
+        <form action="recipes.php" method="GET" class="filter-search">
+          <input type="text" name="search_query" placeholder="Search recipe"
+            value="<?php echo isset($_GET['search_query']) ? htmlspecialchars($_GET['search_query']) : ''; ?>">
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </div>
+  </div>
+
     <!-- Hero Search Section End -->
 
     <!-- Single Recipe Section Begin -->
@@ -89,7 +77,8 @@
                     <ul id="categories">
                     </ul>
                 </div>
-                <img id="recipe-image" alt="Recipe Image" >
+                <img id="recipe-image" alt="Recipe Image" style="display: block; margin: 0 auto;" />
+                >
             </div>
         </div>
         <div class="container">
@@ -137,50 +126,7 @@
     </section>
     <!-- Single Recipe Section End -->
 
-    <!-- Similar Recipe Section Begin -->
-    <section class="similar-recipe spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="similar-item">
-                        <a href="#"><img src="img/cat-feature/small-7.jpg" alt=""></a>
-                        <div class="similar-text">
-                            <div class="cat-name">Vegan</div>
-                            <h6>Italian Tiramisu with Coffe</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="similar-item">
-                        <a href="#"><img src="img/cat-feature/small-6.jpg" alt=""></a>
-                        <div class="similar-text">
-                            <div class="cat-name">Vegan</div>
-                            <h6>Dry Cookies with Corn</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="similar-item">
-                        <a href="#"><img src="img/cat-feature/small-5.jpg" alt=""></a>
-                        <div class="similar-text">
-                            <div class="cat-name">Vegan</div>
-                            <h6>Asparagus with Pork Loin and Vegetables</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="similar-item">
-                        <a href="#"><img src="img/cat-feature/small-4.jpg" alt=""></a>
-                        <div class="similar-text">
-                            <div class="cat-name">Vegan</div>
-                            <h6>Smoked Salmon mini Sandwiches with Onion</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Similar Recipe Section End -->
+   
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -189,39 +135,25 @@
                 <div class="col-lg-5">
                     <div class="fs-left">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.php">
                                 <img src="img/footer-logo.png" alt="">
                             </a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>    Bringing you the tastiest recipes from kitchens around the world — whether you're a beginner or a seasoned chef,
+                             we’ve got something delicious for everyone. <br />
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6 offset-lg-1">
-                    <form action="#" class="subscribe-form">
-                        <h3>Subscribe to our newsletter</h3>
-                        <input type="email" placeholder="Your e-mail">
-                        <button type="submit">Subscribe</button>
-                    </form>
+                   
                     <div class="social-links">
-                        <a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
-                        <a href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
-                        <a href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-                        <a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-                        <a href="#"><i class="fa fa-youtube"></i><span>Youtube</span></a>
+                        <a href="https://www.instagram.com/emna.exe/"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+                        <a href="https://fr.pinterest.com/ThatOvenFeelinCom/"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+                        <a href="https://www.youtube.com/@Recipetineats"><i class="fa fa-youtube"></i><span>Youtube</span></a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </footer>
     <!-- Footer Section End -->
@@ -249,6 +181,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   
   <script src="js/getrecipe.js?<?php echo time(); ?>"></script>
+  <script> window.chtlConfig = { chatbotId: "3984217127" } </script>
+  <script async data-id="3984217127" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 
 
 </body>

@@ -7,7 +7,7 @@
   <meta name="keywords" content="Yoga, unica, creative, html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Yummy | Template</title>
+  <title>Yummy </title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
@@ -32,29 +32,17 @@
   <header class="header-section-other">
     <div class="container-fluid">
       <div class="logo">
-        <a href="./index.html"><img src="img/little-logo.png" alt=""></a>
+        <a href="./index.php"><img src="img/little-logo.png" alt=""></a>
       </div>
       <div class="nav-menu">
         <nav class="main-menu mobile-menu">
           <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Pages</a>
-              <ul class="sub-menu">
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="recipe.html">Recipe</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-            <li><a href="recipe.html">Recipes</a></li>
-            <li><a href="categories.html">Best Of</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li class="active"><a href="recipes.php">Recipes</a></li>
+            <li><a href="about-me.html">About me</a></li>
           </ul>
         </nav>
-        <div class="nav-right search-switch">
-          <i class="fa fa-search"></i>
-        </div>
+        
       </div>
       <div id="mobile-menu-wrap"></div>
     </div>
@@ -91,40 +79,27 @@
         <div class="col-lg-5">
           <div class="fs-left">
             <div class="logo">
-              <a href="./index.html">
+              <a href="./index.php">
                 <img src="img/footer-logo.png" alt="">
               </a>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-              viverra maecenas accumsan lacus vel facilisis.</p>
+            <p>  Bringing you the tastiest recipes from kitchens around the world — whether you're a beginner or a seasoned chef,
+               we’ve got something delicious for everyone. <br />
+            </p>
           </div>
         </div>
         <div class="col-lg-6 offset-lg-1">
-          <form action="#" class="subscribe-form">
-            <h3>Subscribe to our newsletter</h3>
-            <input type="email" placeholder="Your e-mail">
-            <button type="submit">Subscribe</button>
-          </form>
-          <div class="social-links">
-            <a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
-            <a href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
-            <a href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-            <a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-            <a href="#"><i class="fa fa-youtube"></i><span>Youtube</span></a>
-          </div>
+          
+         <div class="social-links">
+          <a href="https://www.instagram.com/emna.exe/"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+          <a href="https://fr.pinterest.com/ThatOvenFeelinCom/"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+          <a href="https://www.youtube.com/@Recipetineats"><i class="fa fa-youtube"></i><span>Youtube</span></a>
+        </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <div class="copyright-text">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>
-              document.write(new Date().getFullYear());
-            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>
-            by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </div>
+       
         </div>
       </div>
     </div>
@@ -148,7 +123,8 @@
   <script src="js/jquery.nice-select.min.js"></script>
   <script src="js/mixitup.min.js"></script>
   <script src="js/main.js"></script>
-
+  <script> window.chtlConfig = { chatbotId: "3984217127" } </script>
+  <script async data-id="3984217127" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 
 
 

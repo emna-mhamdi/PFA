@@ -773,6 +773,11 @@ ol {
   min-width: 100%;
 }
 
+.cf-item-pic img {
+  width: 175px;
+  height: 175px;
+}
+
 .cf-filter .cf-item .cf-item-text {
   text-align: center;
   padding: 0 15px;
@@ -2577,4 +2582,9 @@ ol {
   .map .map-content {
     right: calc(50% - 131px);
   }
+  .about-left {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
 }
